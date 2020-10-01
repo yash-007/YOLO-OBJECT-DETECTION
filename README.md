@@ -9,6 +9,8 @@ https://drive.google.com/file/d/0B1tW_VtY7onibmdQWE1zVERxcjQ/view?usp=sharing
 YOLO - You Only Look Once is state of the art real time object detecting algorithm. When run on GPU's we get astonishing frame-rates upto 200 FPS.
 YOLO takes a completely different approach than traditional R-CNN's and Fast R-CNN's which first defines many possible region of interest and then predicting the bounding boxes in those regions. 
 YOLO on the other hand, scans the entire image only once (hence the name) using the concept of convolution and hence is so efficient.</br>
+YOLO makes use of only convolutional layers, making it a fully convolutional network (FCN). In YOLO v3 paper, the authors present new, deeper architecture of feature extractor called Darknet-53. As it’s name suggests, it contains of 53 convolutional layers, each followed by batch normalization layer and Leaky ReLU activation. No form of pooling is used, and a convolutional layer with stride 2 is used to downsample the feature maps. This helps in preventing loss of low-level features often attributed to pooling.
+YOLO is invariant to the size of the input image. However, in practice, we might want to stick to a constant input size due to various problems that only show their heads when we are implementing the algorithm.
 
 # Input
 The input image is first divided into S X S grid.</br>
